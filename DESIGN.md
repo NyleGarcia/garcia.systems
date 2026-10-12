@@ -216,7 +216,7 @@ The log window wipes open top-down one text row at a time: `clip-path: inset(0 0
 ## Do's and Don'ts
 
 ### Do:
-- **Do** pick every color from the sixteen `--c0`..`--c15` tokens, and update `render-art.mjs` in the same change if the palette ever moves.
+- **Do** pick every color from the sixteen `--c0`..`--c15` tokens, and update `quantize.mjs` (and `render-art.mjs`) in the same change if the palette ever moves.
 - **Do** make in-between tones as 4px two-color checkerboard dithers.
 - **Do** set DotGothic16 at 16, 32, 48, or 64px with smoothing off, and bold it by overprint.
 - **Do** give every region the hairline frame with pixel corner brackets, and nothing that is not a region.
