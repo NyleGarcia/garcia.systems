@@ -19,7 +19,7 @@
 <body>
 <!--
 THESIS: A retro space-sim screen set inside a hyper-modern HUD, not a starfield-with-cards developer page. Locked sixteen colors, a bitmap display voice, pixel chrome on the artifact; hairline framing, a current body face, and air around it.
-OWN-WORLD: sixteen hard-coded colors, ordered dither for every in-between tone, DotGothic16 at 16/32/48/64px for display and readouts with Chakra Petch for copy, hairline frames with pixel corner brackets, an inverted title bar, bordered menu rows that invert when active, a tiled pixel starfield behind a dithered ringed-planet scene at integer scale.
+OWN-WORLD: sixteen hard-coded colors, ordered dither for every in-between tone, DotGothic16 at 16/32/48/64px for display and readouts with Chakra Petch for copy, one hairline frame grammar with pixel corner brackets on every region, an inverted title bar, bordered menu rows that invert when active, a dithered ringed-planet scene at integer scale as the only window into space on a pure void.
 STORY: a visitor lands on a game screen, reads who Nyle is in two lines, scans the command menu, and drops into the log: projects first, then systems, the flight log, and comms.
 FIRST VIEWPORT: upper band, two framed regions: name, role, and two-line bio left with the command menu beneath, first row inverted; the 640x400 scene right. The text window docks below, title bar reading LOG, opening one cell at a time.
 FORM: PC-98 sixteen-color field, chosen by the user from the re-rolled hand, seed key f223e9ad, steered: more space, low-key anime, then hyper modern plus retro space.
@@ -51,10 +51,12 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </nav>
     </div>
 
-    <figure class="art" aria-label="Pixel-art space scene: a ringed gas giant, a nebula, a moon, and a small ship, drawn in sixteen colors">
-      <img class="stars-a" src="assets/stars-a.png" width="320" height="200" alt="">
-      <img class="stars-b" src="assets/stars-b.png" width="320" height="200" alt="">
-      <img class="scene" src="assets/scene.png" width="320" height="200" alt="">
+    <figure class="art frame" aria-label="Pixel-art space scene: a ringed gas giant, a nebula, a moon, and a small ship, drawn in sixteen colors">
+      <div class="raster">
+        <img class="stars-a" src="assets/stars-a.png" width="320" height="200" alt="">
+        <img class="stars-b" src="assets/stars-b.png" width="320" height="200" alt="">
+        <img class="scene" src="assets/scene.png" width="320" height="200" alt="">
+      </div>
       <figcaption class="caption"><span lang="ja">ガルシア・システムズ</span><span class="spec"> 320x200 / 16 colors</span></figcaption>
     </figure>
   </header>
