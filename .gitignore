@@ -1,3 +1,4 @@
-.impeccable/
+.impeccable/*
+!.impeccable/design.json
 .tmp/
 scratch/

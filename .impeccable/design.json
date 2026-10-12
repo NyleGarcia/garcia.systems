@@ -1,0 +1,474 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-12T22:23:00.283Z",
+  "title": "Design System: garcia.systems",
+  "extensions": {
+    "colorMeta": {
+      "void": {
+        "role": "neutral",
+        "displayName": "Void",
+        "canonical": "#000000",
+        "tonalRamp": [
+          "#000000",
+          "#0b0b2a",
+          "#1c1f5c",
+          "#2d3350",
+          "#3a2c7c",
+          "#5a6382",
+          "#a9b1c9",
+          "#f6f1dc"
+        ],
+        "purpose": "Page ground and scene backing; the void stays void."
+      },
+      "deep-navy": {
+        "role": "neutral",
+        "displayName": "Deep Navy",
+        "canonical": "#0b0b2a",
+        "tonalRamp": [
+          "#000000",
+          "#0b0b2a",
+          "#1c1f5c",
+          "#2d3350",
+          "#3a2c7c",
+          "#5a6382",
+          "#a9b1c9",
+          "#f6f1dc"
+        ],
+        "purpose": "Every framed panel ground; ink on inverted surfaces."
+      },
+      "indigo": {
+        "role": "tertiary",
+        "displayName": "Indigo",
+        "canonical": "#1c1f5c",
+        "tonalRamp": [
+          "#000000",
+          "#0b0b2a",
+          "#1c1f5c",
+          "#2d3350",
+          "#3a2c7c",
+          "#5a6382",
+          "#a9b1c9",
+          "#f6f1dc"
+        ],
+        "purpose": "Dither strip half; art ramps."
+      },
+      "violet": {
+        "role": "tertiary",
+        "displayName": "Violet",
+        "canonical": "#3a2c7c",
+        "tonalRamp": [
+          "#0b0b2a",
+          "#3a2c7c",
+          "#7b3fa3",
+          "#c2508e",
+          "#d93c3c",
+          "#e5703d",
+          "#f4c454",
+          "#f6f1dc"
+        ],
+        "purpose": "Dither strip half; planet ramp."
+      },
+      "purple": {
+        "role": "tertiary",
+        "displayName": "Purple",
+        "canonical": "#7b3fa3",
+        "tonalRamp": [
+          "#0b0b2a",
+          "#3a2c7c",
+          "#7b3fa3",
+          "#c2508e",
+          "#d93c3c",
+          "#e5703d",
+          "#f4c454",
+          "#f6f1dc"
+        ],
+        "purpose": "Art and favicon only."
+      },
+      "magenta": {
+        "role": "tertiary",
+        "displayName": "Magenta",
+        "canonical": "#c2508e",
+        "tonalRamp": [
+          "#0b0b2a",
+          "#3a2c7c",
+          "#7b3fa3",
+          "#c2508e",
+          "#d93c3c",
+          "#e5703d",
+          "#f4c454",
+          "#f6f1dc"
+        ],
+        "purpose": "Art and favicon only."
+      },
+      "orange": {
+        "role": "secondary",
+        "displayName": "Burner Orange",
+        "canonical": "#e5703d",
+        "tonalRamp": [
+          "#0b0b2a",
+          "#3a2c7c",
+          "#7b3fa3",
+          "#c2508e",
+          "#d93c3c",
+          "#e5703d",
+          "#f4c454",
+          "#f6f1dc"
+        ],
+        "purpose": "Active menu pointer; art."
+      },
+      "amber": {
+        "role": "primary",
+        "displayName": "Ship Amber",
+        "canonical": "#f4c454",
+        "tonalRamp": [
+          "#0b0b2a",
+          "#3a2c7c",
+          "#7b3fa3",
+          "#c2508e",
+          "#d93c3c",
+          "#e5703d",
+          "#f4c454",
+          "#f6f1dc"
+        ],
+        "purpose": "Headings, dates, system codes, emphasis, resting pointer."
+      },
+      "ivory": {
+        "role": "neutral",
+        "displayName": "Ivory",
+        "canonical": "#f6f1dc",
+        "tonalRamp": [
+          "#000000",
+          "#0b0b2a",
+          "#1c1f5c",
+          "#2d3350",
+          "#3a2c7c",
+          "#5a6382",
+          "#a9b1c9",
+          "#f6f1dc"
+        ],
+        "purpose": "Primary text and every inverted ground."
+      },
+      "pale-slate": {
+        "role": "neutral",
+        "displayName": "Pale Slate",
+        "canonical": "#a9b1c9",
+        "tonalRamp": [
+          "#000000",
+          "#0b0b2a",
+          "#1c1f5c",
+          "#2d3350",
+          "#3a2c7c",
+          "#5a6382",
+          "#a9b1c9",
+          "#f6f1dc"
+        ],
+        "purpose": "Secondary text and frame corner brackets."
+      },
+      "mid-slate": {
+        "role": "neutral",
+        "displayName": "Mid Slate",
+        "canonical": "#5a6382",
+        "tonalRamp": [
+          "#000000",
+          "#0b0b2a",
+          "#1c1f5c",
+          "#2d3350",
+          "#3a2c7c",
+          "#5a6382",
+          "#a9b1c9",
+          "#f6f1dc"
+        ],
+        "purpose": "Decoration only: menu and tag borders, divider dither. Never text."
+      },
+      "dark-slate": {
+        "role": "neutral",
+        "displayName": "Dark Slate",
+        "canonical": "#2d3350",
+        "tonalRamp": [
+          "#000000",
+          "#0b0b2a",
+          "#1c1f5c",
+          "#2d3350",
+          "#3a2c7c",
+          "#5a6382",
+          "#a9b1c9",
+          "#f6f1dc"
+        ],
+        "purpose": "Hairline frames, row separators, rules."
+      },
+      "cyan": {
+        "role": "primary",
+        "displayName": "Signal Cyan",
+        "canonical": "#42c8c8",
+        "tonalRamp": [
+          "#000000",
+          "#0b0b2a",
+          "#1c1f5c",
+          "#2d3350",
+          "#1f8e7c",
+          "#42c8c8",
+          "#4ed66c",
+          "#f6f1dc"
+        ],
+        "purpose": "Links; inverted link ground on hover/focus."
+      },
+      "teal": {
+        "role": "tertiary",
+        "displayName": "Teal",
+        "canonical": "#1f8e7c",
+        "tonalRamp": [
+          "#000000",
+          "#0b0b2a",
+          "#1c1f5c",
+          "#2d3350",
+          "#1f8e7c",
+          "#42c8c8",
+          "#4ed66c",
+          "#f6f1dc"
+        ],
+        "purpose": "Art and favicon only."
+      },
+      "green": {
+        "role": "secondary",
+        "displayName": "Live Green",
+        "canonical": "#4ed66c",
+        "tonalRamp": [
+          "#000000",
+          "#0b0b2a",
+          "#1c1f5c",
+          "#2d3350",
+          "#1f8e7c",
+          "#42c8c8",
+          "#4ed66c",
+          "#f6f1dc"
+        ],
+        "purpose": "8px live-status square only."
+      },
+      "red": {
+        "role": "secondary",
+        "displayName": "Reserved Red",
+        "canonical": "#d93c3c",
+        "tonalRamp": [
+          "#0b0b2a",
+          "#3a2c7c",
+          "#7b3fa3",
+          "#c2508e",
+          "#d93c3c",
+          "#e5703d",
+          "#f4c454",
+          "#f6f1dc"
+        ],
+        "purpose": "Reserved for errors; currently unused."
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Name in the identity frame only; 32/48/64px by breakpoint with 2/3/4px overprint bold."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Amber section headings in the log, 2px overprint bold."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project and employer names in rows; role line at 500."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All prose; 68ch cap, bio 52ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Bitmap readouts: HUD, menu, title bar, caption, dates, codes, tags, status line; 24px row."
+      }
+    },
+    "shadows": [
+      {
+        "name": "focus-ring",
+        "value": "0 0 0 2px #f6f1dc",
+        "purpose": "Link focus only; no offset, no blur. The system is otherwise shadowless."
+      },
+      {
+        "name": "overprint-bold",
+        "value": "Npx 0 0 currentColor (N = size / 16)",
+        "purpose": "text-shadow bold for DotGothic16 display and headline."
+      }
+    ],
+    "motion": [
+      {
+        "name": "window-open",
+        "value": "clip-path inset(0 0 100% 0) -> inset(0); 640ms steps(var(--rows), end) both; --rows = max(8, round(min(window height, viewport) / 24))",
+        "purpose": "Log window opens one text row at a time. Reduced motion: none."
+      },
+      {
+        "name": "star-twinkle",
+        "value": "2.4s steps(1, end) infinite; layer A visible 0-55%, layer B 56-100%",
+        "purpose": "Two-frame star swap in the scene. Reduced motion: none."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "md",
+        "value": "700px"
+      },
+      {
+        "name": "lg",
+        "value": "1040px"
+      }
+    ],
+    "dithers": [
+      {
+        "name": "dither-25",
+        "value": "repeating-conic-gradient(#3a2c7c 0 25%, #1c1f5c 0 50%) 0 0 / 4px 4px",
+        "purpose": "8px strip under the title bar."
+      },
+      {
+        "name": "dither-50",
+        "value": "repeating-conic-gradient(#5a6382 0 25%, transparent 0 50%) 0 0 / 4px 4px",
+        "purpose": "4px section divider, 32px margin."
+      }
+    ],
+    "raster": {
+      "virtual": "320x200",
+      "displayed": [
+        "320x200 under 700px",
+        "640x400 at 700px+"
+      ],
+      "rendering": "pixelated",
+      "source": "scripts/render-art.mjs (Bayer 4x4, locked palette)"
+    }
+  },
+  "components": [
+    {
+      "name": "Frame",
+      "kind": "card",
+      "refersTo": "frame",
+      "description": "Region primitive: hairline border, deep-navy ground, pixel corner brackets top-left and bottom-right.",
+      "html": "<div class=\"ds-frame\"><p style=\"margin:0\">Framed region</p></div>",
+      "css": ".ds-frame{position:relative;border:1px solid #2d3350;background:#0b0b2a;color:#f6f1dc;padding:24px;font-family:\"Chakra Petch\",\"Segoe UI\",system-ui,sans-serif;font-size:17px;line-height:28px}.ds-frame::before,.ds-frame::after{content:\"\";position:absolute;width:12px;height:12px;pointer-events:none}.ds-frame::before{left:-1px;top:-1px;border-left:2px solid #a9b1c9;border-top:2px solid #a9b1c9}.ds-frame::after{right:-1px;bottom:-1px;border-right:2px solid #a9b1c9;border-bottom:2px solid #a9b1c9}"
+    },
+    {
+      "name": "Command Menu",
+      "kind": "nav",
+      "refersTo": "menu-row",
+      "description": "Bordered game-menu rows; the active row inverts and shows the drawn pointer.",
+      "html": "<ul class=\"ds-menu\"><li><a href=\"#\" aria-current=\"true\">Projects <small>open source</small></a></li><li><a href=\"#\">Systems <small>what I run</small></a></li><li><a href=\"#\">Comms <small>contact</small></a></li></ul>",
+      "css": ".ds-menu{list-style:none;margin:0;padding:0;display:grid;gap:4px;max-width:360px;background:#0b0b2a}.ds-menu a{display:grid;grid-template-columns:16px 1fr auto;align-items:center;gap:8px;padding:2px 10px;border:1px solid #5a6382;color:#f6f1dc;text-decoration:none;text-transform:uppercase;font-family:\"DotGothic16\",\"MS Gothic\",monospace;font-size:16px;line-height:24px;-webkit-font-smoothing:none}.ds-menu a::before{content:\"\";width:8px;height:12px;background:#f4c454;clip-path:polygon(0 0,100% 50%,0 100%);opacity:0}.ds-menu a small{font-size:16px;color:#a9b1c9}.ds-menu a:hover,.ds-menu a:focus-visible,.ds-menu a[aria-current=\"true\"]{background:#f6f1dc;color:#0b0b2a;border-color:#f6f1dc;outline:none}.ds-menu a:hover::before,.ds-menu a:focus-visible::before,.ds-menu a[aria-current=\"true\"]::before{opacity:1;background:#e5703d}.ds-menu a:hover small,.ds-menu a:focus-visible small,.ds-menu a[aria-current=\"true\"] small{color:#2d3350}"
+    },
+    {
+      "name": "Title Bar",
+      "kind": "custom",
+      "refersTo": "title-bar",
+      "description": "Inverted window title bar with live square, followed by the 25% indigo/violet dither strip.",
+      "html": "<div class=\"ds-bar\"><span>Log</span><span class=\"ds-live\">Online</span></div><div class=\"ds-dither-25\"></div>",
+      "css": ".ds-bar{display:flex;justify-content:space-between;gap:16px;padding:0 12px;background:#f6f1dc;color:#0b0b2a;text-transform:uppercase;font-family:\"DotGothic16\",\"MS Gothic\",monospace;font-size:16px;line-height:24px;-webkit-font-smoothing:none}.ds-live{color:#2d3350}.ds-live::before{content:\"\";display:inline-block;width:8px;height:8px;margin-right:8px;background:#4ed66c;vertical-align:1px}.ds-dither-25{height:8px;background:repeating-conic-gradient(#3a2c7c 0 25%,#1c1f5c 0 50%) 0 0/4px 4px}"
+    },
+    {
+      "name": "Link",
+      "kind": "button",
+      "refersTo": "link",
+      "description": "Cyan text link that inverts on hover and focus; focus adds a 2px ivory ring.",
+      "html": "<p class=\"ds-link-wrap\"><a class=\"ds-link\" href=\"#\">github.com/NyleGarcia</a></p>",
+      "css": ".ds-link-wrap{background:#0b0b2a;padding:16px;margin:0;font-family:\"Chakra Petch\",\"Segoe UI\",system-ui,sans-serif;font-size:19px;font-weight:600;line-height:28px}.ds-link{color:#42c8c8;text-decoration:none}.ds-link:hover,.ds-link:focus-visible{background:#42c8c8;color:#0b0b2a;outline:none}.ds-link:focus-visible{box-shadow:0 0 0 2px #f6f1dc}"
+    },
+    {
+      "name": "Language Tag",
+      "kind": "chip",
+      "refersTo": "lang-tag",
+      "description": "Square bordered bitmap tag after a project name.",
+      "html": "<span class=\"ds-lang\">Rust</span>",
+      "css": ".ds-lang{display:inline-block;padding:0 6px;border:1px solid #5a6382;color:#a9b1c9;background:#0b0b2a;font-family:\"DotGothic16\",\"MS Gothic\",monospace;font-size:16px;line-height:22px;-webkit-font-smoothing:none}"
+    },
+    {
+      "name": "Systems Cell",
+      "kind": "chip",
+      "refersTo": "systems-cell",
+      "description": "Hairline cell: amber bitmap code then the system name.",
+      "html": "<ul class=\"ds-systems\"><li><b>MSG</b>Kafka</li><li><b>ORC</b>Kubernetes</li><li><b>IAC</b>Terraform</li></ul>",
+      "css": ".ds-systems{list-style:none;margin:0;padding:16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(176px,1fr));gap:8px;background:#0b0b2a}.ds-systems li{border:1px solid #2d3350;padding:4px 12px;line-height:28px;font-weight:500;color:#f6f1dc;font-family:\"Chakra Petch\",\"Segoe UI\",system-ui,sans-serif;font-size:17px}.ds-systems b{font-weight:400;color:#f4c454;margin-right:10px;font-family:\"DotGothic16\",\"MS Gothic\",monospace;font-size:16px;-webkit-font-smoothing:none}"
+    },
+    {
+      "name": "Log Row",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Key column of amber bitmap date, then title and pale-slate description; hairline separated.",
+      "html": "<ul class=\"ds-rows\"><li><span class=\"ds-when\">2025 to now</span><span class=\"ds-name\">OCC <span class=\"ds-meta\">Manager, Cloud Engineering</span></span><p class=\"ds-what\">Leading the cloud engineering team.</p></li><li><span class=\"ds-when\">2021 to 2023</span><span class=\"ds-name\">XSELL Technologies</span><p class=\"ds-what\">Moved EC2 to Kubernetes with KEDA.</p></li></ul>",
+      "css": ".ds-rows{list-style:none;margin:0;padding:24px;background:#0b0b2a;color:#f6f1dc;font-family:\"Chakra Petch\",\"Segoe UI\",system-ui,sans-serif;font-size:17px;line-height:28px}.ds-rows li{display:grid;grid-template-columns:176px 1fr;gap:4px 24px;padding:16px 0;border-top:1px solid #2d3350}.ds-rows li:first-child{border-top:0;padding-top:0}.ds-when{color:#f4c454;font-family:\"DotGothic16\",\"MS Gothic\",monospace;font-size:16px;line-height:24px;padding-top:2px;-webkit-font-smoothing:none}.ds-name{font-size:19px;font-weight:600}.ds-meta{font-weight:400;color:#a9b1c9}.ds-what{grid-column:2;margin:0;color:#a9b1c9}"
+    },
+    {
+      "name": "Section Heading",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Amber bitmap headline at 32px with overprint bold.",
+      "html": "<h2 class=\"ds-h2\">Projects</h2>",
+      "css": ".ds-h2{margin:0;padding:16px;background:#0b0b2a;font-family:\"DotGothic16\",\"MS Gothic\",monospace;font-size:32px;line-height:32px;font-weight:400;text-transform:uppercase;color:#f4c454;text-shadow:2px 0 0 currentColor;-webkit-font-smoothing:none}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Sixteen-Color Bridge",
+    "overview": "A PC-98 space-sim screen docked inside a current HUD. The retro layer is literal and locked: sixteen hard-coded colors, ordered dither for every in-between tone, a bitmap face at integer sizes, and a 320x200 dithered ringed-planet scene shown only at integer scale. The modern layer is restraint around it: one hairline frame grammar, a current geometric body face (Chakra Petch), a large display scale, and generous air on a pure black void.\n\nDensity is low-to-medium. Regions are fixed and framed; content inside them reads as a log of rows separated by hairlines. Space imagery lives in exactly one window, the scene; the rest of the page is void and deep-navy panels. Nothing glows, blurs, or rounds.",
+    "keyCharacteristics": [
+      "Locked sixteen-entry palette; every color on the page is one of them.",
+      "Intermediate tones are 4px checkerboard dithers of two palette entries, never blends.",
+      "DotGothic16 for display and readouts at 16/32/48/64px only; Chakra Petch 400/500/600 for copy.",
+      "Hairline (1px dark slate) frames with 12px pale-slate pixel corner brackets on two opposite corners.",
+      "Inversion (ivory ground, navy ink) is the active and title-bar state.",
+      "Stepped motion only: per-row window wipe and a two-frame star twinkle."
+    ],
+    "rules": [
+      {
+        "name": "The Locked Sixteen Rule",
+        "body": "Every color in CSS, art, and favicon is one of the sixteen `--c0`..`--c15` entries, mirrored exactly in `scripts/render-art.mjs`. Add no seventeenth color, no alpha tint, no `color-mix`.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dither, Not Blend, Rule",
+        "body": "An in-between tone is an ordered dither of two entries: `repeating-conic-gradient(A 0 25%, B 0 50%) 0 0 / 4px 4px` in CSS, Bayer 4x4 in the art.",
+        "section": "colors"
+      },
+      {
+        "name": "The Decoration Slate Rule",
+        "body": "Mid slate (`--c10`) is borders and dithers only; it never sets text.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reserved Red Rule",
+        "body": "Red (`--c15`) is reserved for errors. It currently appears nowhere; keep it that way until something can actually fail.",
+        "section": "colors"
+      },
+      {
+        "name": "The Integer Cell Rule",
+        "body": "The bitmap face renders only at 16, 32, 48, or 64px on a 24px row (`--row`), with font smoothing off. Never fractional, never fluid, never `clamp()`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Overprint Bold Rule",
+        "body": "DotGothic16 has one weight. Bitmap bold is a horizontal `text-shadow` of currentColor, 1px per 16px of size; never `font-weight` or faux-bold.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Light Rule",
+        "body": "Surfaces never cast shadow and never glow. If something needs to come forward, it inverts.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** pick every color from the sixteen `--c0`..`--c15` tokens, and update `render-art.mjs` in the same change if the palette ever moves.",
+      "**Do** make in-between tones as 4px two-color checkerboard dithers.",
+      "**Do** set DotGothic16 at 16, 32, 48, or 64px with smoothing off, and bold it by overprint.",
+      "**Do** give every region the hairline frame with pixel corner brackets, and nothing that is not a region.",
+      "**Do** signal active state by inversion to ivory and navy.",
+      "**Do** keep motion stepped (`steps()`), and gate it behind `prefers-reduced-motion: no-preference`.",
+      "**Do** scale raster art by integers only, with `image-rendering: pixelated`."
+    ],
+    "donts": [
+      "**Don't** use gradients except the two-color `repeating-conic-gradient` checkerboard dither; no blur, `backdrop-filter`, glow, drop shadows, or rounded corners.",
+      "**Don't** set text in mid slate (`--c10`), or use red (`--c15`) for anything but errors.",
+      "**Don't** use a system or fallback face as a display voice; the bitmap face is self-hosted and blocks until loaded.",
+      "**Don't** use glyph, emoji, or icon-font icons; draw them with `clip-path` or filled squares.",
+      "**Don't** add a starfield or space imagery outside the scene window; the page ground stays pure void.",
+      "**Don't** use eased or continuous tweens; this world moves in frames."
+    ]
+  }
+}

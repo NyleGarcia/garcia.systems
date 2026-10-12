@@ -225,7 +225,7 @@ The log window wipes open top-down one text row at a time: `clip-path: inset(0 0
 - **Do** scale raster art by integers only, with `image-rendering: pixelated`.
 
 ### Don't:
-- **Don't** use gradients for shading, blur, `backdrop-filter`, glow, drop shadows, or rounded corners.
+- **Don't** use gradients except the two-color `repeating-conic-gradient` checkerboard dither; no blur, `backdrop-filter`, glow, drop shadows, or rounded corners.
 - **Don't** set text in mid slate (`--c10`), or use red (`--c15`) for anything but errors.
 - **Don't** use a system or fallback face as a display voice; the bitmap face is self-hosted and blocks until loaded.
 - **Don't** use glyph, emoji, or icon-font icons; draw them with `clip-path` or filled squares.
