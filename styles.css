@@ -198,11 +198,13 @@ h1, h2, h3 { margin: 0; font-weight: 400; line-height: 1; text-transform: upperc
 
 /* ---------- the log window ---------- */
 .win { padding: 0; }
+/* the window opens one text row at a time; only when scripting runs, and never from nothing:
+   the title bar is already on screen at frame zero */
 @media (prefers-reduced-motion: no-preference) {
-  .win { --rows: 24; animation: open-window 640ms steps(var(--rows), end) both; }
+  .js .win { --rows: 24; animation: open-window 640ms steps(var(--rows), end) both; }
 }
 @keyframes open-window {
-  from { clip-path: inset(0 0 100% 0); }
+  from { clip-path: inset(0 0 calc(100% - 32px) 0); }
   to { clip-path: inset(0 0 0 0); }
 }
 .win .bar {

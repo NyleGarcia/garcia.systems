@@ -2,6 +2,7 @@
 // section in view. Without JavaScript the rows still work as plain in-page links.
 (function () {
   // The window opens one text row at a time: size the wipe's step count to the rows it covers.
+  document.documentElement.classList.add("js");
   var win = document.querySelector(".win");
   if (win) win.style.setProperty("--rows", String(Math.max(8, Math.round(Math.min(win.offsetHeight, window.innerHeight) / 24))));
 
