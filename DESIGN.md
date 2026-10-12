@@ -131,7 +131,7 @@ A cold night palette of navy, indigo, and slate, lit by a warm sunset run (purpl
 - **Dark Slate** (dark-slate): hairline frames, row separators, HUD and status rules, the live label on the inverted title bar.
 
 ### Named Rules
-**The Locked Sixteen Rule.** Every color in CSS, art, and favicon is one of the sixteen `--c0`..`--c15` entries, mirrored exactly in `scripts/render-art.mjs`. Add no seventeenth color, no alpha tint, no `color-mix`.
+**The Locked Sixteen Rule.** Every color in CSS, art, and favicon is one of the sixteen `--c0`..`--c15` entries, mirrored exactly in `scripts/make-scene.sh (quantize.mjs)`. Add no seventeenth color, no alpha tint, no `color-mix`.
 
 **The Dither, Not Blend, Rule.** An in-between tone is an ordered dither of two entries: `repeating-conic-gradient(A 0 25%, B 0 50%) 0 0 / 4px 4px` in CSS, Bayer 4x4 in the art.
 
@@ -208,7 +208,7 @@ Inline square tag after a project name: 1px mid-slate border, pale-slate label t
 Square 1px dark-slate cell, 4px 12px padding, 28px line, Chakra Petch 500 name preceded by an amber bitmap code (MSG, ORC, CLD...) with 10px gap.
 
 ### Scene Window (Signature)
-The only window into space. Three stacked 320x200 PNGs (stars-a, stars-b, scene) rendered from `scripts/render-art.mjs`, pixelated at 1x or 2x inside a frame. A deep-navy caption block sits bottom-right in pale-slate label type. Stars twinkle in two frames: `2.4s steps(1, end) infinite`, swapping at 56%.
+The only window into space. Three stacked 320x200 PNGs (stars-a, stars-b, scene) rendered from `scripts/make-scene.sh (quantize.mjs)`, pixelated at 1x or 2x inside a frame. A deep-navy caption block sits bottom-right in pale-slate label type. Stars twinkle in two frames: `2.4s steps(1, end) infinite`, swapping at 56%.
 
 ### Window Open (Motion)
 The log window wipes open top-down one text row at a time: `clip-path: inset(0 0 100% 0)` to `inset(0)`, `640ms steps(var(--rows), end)`, where `main.js` sets `--rows` to the window's visible height divided by 24px (minimum 8). Both animations sit inside `prefers-reduced-motion: no-preference`; reduced motion shows the final state.
@@ -231,3 +231,8 @@ The log window wipes open top-down one text row at a time: `clip-path: inset(0 0
 - **Don't** use glyph, emoji, or icon-font icons; draw them with `clip-path` or filled squares.
 - **Don't** add a starfield or space imagery outside the scene window; the page ground stays pure void.
 - **Don't** use eased or continuous tweens; this world moves in frames.
+
+
+## Authored imagery
+
+The hero scene and the eight project icons are generated illustrations (Antigravity image model, prompts in the session log), then quantized into the sixteen-color palette with a Bayer 4x4 ordered dither by `scripts/quantize.mjs`. Sources live in `assets/source/`; `sh scripts/make-scene.sh` rebuilds every derived asset. The scene ships at 640x400 (700px and up) and 320x200, two frames each for the star twinkle. Icons are 64x64, flat fills snapped to the panel navy so they sit on `--c1` without a checker. Any new image follows the same path: generate flat-shaded in the palette's hues, quantize, ship at integer scale only.

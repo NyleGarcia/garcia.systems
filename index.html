@@ -10,7 +10,7 @@
   <meta property="og:description" content="Kafka and Kubernetes by day, Linux tools by night. Chicago, IL.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://garcia.systems/">
-  <meta property="og:image" content="https://garcia.systems/assets/scene.png">
+  <meta property="og:image" content="https://garcia.systems/assets/scene-640.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect width='16' height='16' fill='%230b0b2a'/%3E%3Crect x='5' y='3' width='6' height='1' fill='%23f4c454'/%3E%3Crect x='4' y='4' width='8' height='1' fill='%23e5703d'/%3E%3Crect x='3' y='5' width='10' height='2' fill='%23f4c454'/%3E%3Crect x='3' y='7' width='10' height='2' fill='%23c2508e'/%3E%3Crect x='3' y='9' width='10' height='2' fill='%237b3fa3'/%3E%3Crect x='4' y='11' width='8' height='1' fill='%233a2c7c'/%3E%3Crect x='5' y='12' width='6' height='1' fill='%231c1f5c'/%3E%3Crect x='0' y='8' width='3' height='1' fill='%23a9b1c9'/%3E%3Crect x='13' y='8' width='3' height='1' fill='%23a9b1c9'/%3E%3Crect x='1' y='9' width='2' height='1' fill='%235a6382'/%3E%3Crect x='13' y='7' width='2' height='1' fill='%235a6382'/%3E%3C/svg%3E">
   <link rel="preload" href="fonts/dotgothic16-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/chakra-petch-400-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -51,13 +51,18 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </nav>
     </div>
 
-    <figure class="art frame" aria-label="Pixel-art space scene: a ringed gas giant, a nebula, a moon, and a small ship, drawn in sixteen colors">
+    <figure class="art frame" aria-label="Space scene in sixteen colors: a ringed gas giant, a violet nebula, a moon, a space station, and a small ship with a cyan engine trail">
       <div class="raster">
-        <img class="stars-a" src="assets/stars-a.png" width="320" height="200" alt="">
-        <img class="stars-b" src="assets/stars-b.png" width="320" height="200" alt="">
-        <img class="scene" src="assets/scene.png" width="320" height="200" alt="">
+        <picture class="frame-a">
+          <source media="(min-width: 700px)" srcset="assets/scene-640.png">
+          <img src="assets/scene-320.png" width="320" height="200" alt="">
+        </picture>
+        <picture class="frame-b">
+          <source media="(min-width: 700px)" srcset="assets/scene-640-b.png">
+          <img src="assets/scene-320-b.png" width="320" height="200" alt="">
+        </picture>
       </div>
-      <figcaption class="caption"><span lang="ja">ガルシア・システムズ</span><span class="spec"> 320x200 / 16 colors</span></figcaption>
+      <figcaption class="caption"><span lang="ja">ガルシア・システムズ</span><span class="spec"> 640x400 / 16 colors</span></figcaption>
     </figure>
   </header>
 
@@ -70,34 +75,42 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <h2 id="projects-h">Projects</h2>
         <ul class="rows">
           <li>
+            <img class="icon" src="assets/icons/gamehail.png" width="64" height="64" alt="">
             <span class="name"><a href="https://github.com/NyleGarcia/gamehail">gamehail</a><span class="lang">Python</span></span>
             <p class="what">Voice assistant for games on Linux. Hold a key, ask out loud, get a spoken answer and an overlay. Per-game MCP modules, Star Citizen wired up, OpenDeck plugin included.</p>
           </li>
           <li>
+            <img class="icon" src="assets/icons/openwave.png" width="64" height="64" alt="">
             <span class="name"><a href="https://github.com/NyleGarcia/openwave">OpenWave</a><span class="lang">Rust</span></span>
             <p class="what">Elgato Wave XLR, XLR Dock, and Wave:3 controls native to Linux: GTK4, libadwaita, and a PipeWire mixing matrix. Reverse-engineered, no vendor software.</p>
           </li>
           <li>
+            <img class="icon" src="assets/icons/openwave-opendeck.png" width="64" height="64" alt="">
             <span class="name"><a href="https://github.com/NyleGarcia/openwave-opendeck">openwave-opendeck</a><span class="lang">Python</span></span>
             <p class="what">OpenDeck plugin for OpenWave: mix, microphone, and source volumes plus microphone-group switching from a Stream Deck.</p>
           </li>
           <li>
+            <img class="icon" src="assets/icons/gpu-screen-recorder-opendeck.png" width="64" height="64" alt="">
             <span class="name"><a href="https://github.com/NyleGarcia/gpu-screen-recorder-opendeck">gpu-screen-recorder-opendeck</a><span class="lang">Python</span></span>
             <p class="what">GPU Screen Recorder on a Stream Deck: replay buffer, recording, and stream state drawn live on the keys, with one physical key that saves the buffer.</p>
           </li>
           <li>
+            <img class="icon" src="assets/icons/cztimer-opendeck.png" width="64" height="64" alt="">
             <span class="name"><a href="https://github.com/NyleGarcia/cztimer-opendeck">cztimer-opendeck</a><span class="lang">JavaScript</span></span>
             <p class="what">Star Citizen contested-zone timers for OpenDeck: executive hangar cycle and lights, keycard printers, vault door.</p>
           </li>
           <li>
+            <img class="icon" src="assets/icons/countdown-opendeck.png" width="64" height="64" alt="">
             <span class="name"><a href="https://github.com/NyleGarcia/countdown-opendeck">countdown-opendeck</a><span class="lang">JavaScript</span></span>
             <p class="what">Countdown timer plugin for OpenDeck, the Stream Deck software for Linux.</p>
           </li>
           <li>
+            <img class="icon" src="assets/icons/crunchy-plus.png" width="64" height="64" alt="">
             <span class="name"><a href="https://github.com/NyleGarcia/crunchy-plus">Crunchy+</a><span class="lang">TypeScript</span></span>
             <p class="what">Crunchyroll, but better: sub and dub modes, a modern UI, AniList sync and import. Chrome and Firefox MV3 extension.</p>
           </li>
           <li>
+            <img class="icon" src="assets/icons/ai-skills.png" width="64" height="64" alt="">
             <span class="name"><a href="https://github.com/NyleGarcia/ai-skills">ai-skills</a><span class="lang">JavaScript</span></span>
             <p class="what">A skill and plugin library for coding agents: lifecycle workflows, design, infrastructure, and review playbooks shared between Claude Code and Gemini CLI.</p>
           </li>

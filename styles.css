@@ -178,14 +178,15 @@ h1, h2, h3 { margin: 0; font-weight: 400; line-height: 1; text-transform: upperc
   box-sizing: content-box; /* the 1px frame sits outside the integer-scaled raster */
 }
 .art .raster { position: absolute; inset: 0; overflow: hidden; }
-.art img {
+.art picture, .art img {
   position: absolute; inset: 0; width: 100%; height: 100%;
   image-rendering: pixelated; display: block;
 }
-.art .stars-b { opacity: 0; }
+/* two full frames of the same scene; a handful of star pixels differ between them */
+.art .frame-b { opacity: 0; }
 @media (prefers-reduced-motion: no-preference) {
-  .art .stars-a { animation: twinkle-a 2.4s steps(1, end) infinite; }
-  .art .stars-b { animation: twinkle-b 2.4s steps(1, end) infinite; }
+  .art .frame-a { animation: twinkle-a 2.4s steps(1, end) infinite; }
+  .art .frame-b { animation: twinkle-b 2.4s steps(1, end) infinite; }
 }
 @keyframes twinkle-a { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0; } }
 @keyframes twinkle-b { 0%, 55% { opacity: 0; } 56%, 100% { opacity: 1; } }
@@ -257,6 +258,8 @@ section h2 {
   line-height: 22px; font-size: 16px;
 }
 .projects .name { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 0; }
+.projects li { grid-template-columns: 64px 1fr; }
+.projects .icon { width: 64px; height: 64px; image-rendering: pixelated; display: block; grid-row: span 2; }
 
 .systems {
   list-style: none; margin: 0; padding: 0;
@@ -284,7 +287,9 @@ section h2 {
   .win .body { padding: 40px 32px 32px; }
   .rows li { grid-template-columns: 144px 1fr; }
   .rows li .what { grid-column: 2; }
-  .projects li { grid-template-columns: 224px 1fr; }
+  .projects li { grid-template-columns: 64px 200px 1fr; }
+  .projects li .what { grid-column: 3; }
+  .projects .icon { grid-row: auto; }
   .projects .name { flex-direction: column; align-items: flex-start; }
 }
 @media (min-width: 1040px) {
@@ -295,5 +300,5 @@ section h2 {
   .ident h1 { font-size: 64px; line-height: 64px; margin-bottom: 20px; text-shadow: 4px 0 0 currentColor; }
   .win .body { padding: 48px 40px 40px; }
   .rows li { grid-template-columns: 176px 1fr; }
-  .projects li { grid-template-columns: 288px 1fr; }
+  .projects li { grid-template-columns: 64px 240px 1fr; }
 }
