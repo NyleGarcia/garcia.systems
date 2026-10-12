@@ -1,0 +1,305 @@
+/* garcia.systems — sixteen-color field, hyper-modern cut.
+   Retro layer: a locked sixteen-color palette, ordered dithers, a bitmap display face,
+   a 320x200 scene at integer scale, beveled chrome on the artifact itself.
+   Modern layer: hairline HUD framing with pixel corner brackets, a current body face,
+   a large type scale, and air. Every color on the page is one of the sixteen below. */
+
+@font-face {
+  font-family: "DotGothic16";
+  font-style: normal; font-weight: 400; font-display: block;
+  src: url("fonts/dotgothic16-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "DotGothic16";
+  font-style: normal; font-weight: 400; font-display: block;
+  src: url("fonts/dotgothic16-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "DotGothic16";
+  font-style: normal; font-weight: 400; font-display: block;
+  src: url("fonts/dotgothic16-kana.woff2") format("woff2");
+  unicode-range: U+3001-3002, U+3041-307F, U+3081-308F, U+3091-3093, U+3099-309A, U+30A1-30FF;
+}
+@font-face {
+  font-family: "Chakra Petch";
+  font-style: normal; font-weight: 400; font-display: swap;
+  src: url("fonts/chakra-petch-400-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Chakra Petch";
+  font-style: normal; font-weight: 500; font-display: swap;
+  src: url("fonts/chakra-petch-500-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Chakra Petch";
+  font-style: normal; font-weight: 600; font-display: swap;
+  src: url("fonts/chakra-petch-600-latin.woff2") format("woff2");
+}
+
+:root {
+  --c0: #000000;  /* void */
+  --c1: #0b0b2a;  /* deep navy: panel ground */
+  --c2: #1c1f5c;  /* indigo */
+  --c3: #3a2c7c;  /* violet */
+  --c4: #7b3fa3;  /* purple */
+  --c5: #c2508e;  /* magenta */
+  --c6: #e5703d;  /* orange */
+  --c7: #f4c454;  /* amber: dates, pointers, emphasis */
+  --c8: #f6f1dc;  /* ivory: text, inverted rows */
+  --c9: #a9b1c9;  /* pale slate: secondary text, brackets */
+  --c10: #5a6382; /* mid slate: decoration only, never text */
+  --c11: #2d3350; /* dark slate: hairlines, bevel shadow */
+  --c12: #42c8c8; /* cyan: links */
+  --c13: #1f8e7c; /* teal */
+  --c14: #4ed66c; /* green: live status */
+  --c15: #d93c3c; /* red: reserved for errors */
+  --bitmap: "DotGothic16", "MS Gothic", monospace;
+  --modern: "Chakra Petch", "Segoe UI", system-ui, sans-serif;
+  --row: 24px;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { background: var(--c0); -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  color: var(--c8);
+  font-family: var(--modern);
+  font-size: 17px;
+  line-height: 28px;
+  background-color: var(--c0);
+  /* the starfield tiles the whole void at integer 2x */
+  background-image: url("assets/stars-a.png");
+  background-size: 640px 400px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+}
+
+a { color: var(--c12); text-decoration: none; }
+a:hover, a:focus-visible { background: var(--c12); color: var(--c1); outline: none; }
+a:focus-visible { box-shadow: 0 0 0 2px var(--c8); }
+
+p { margin: 0 0 16px; max-width: 68ch; }
+h1, h2, h3 { margin: 0; font-weight: 400; line-height: 1; text-transform: uppercase; }
+
+.skip { position: absolute; left: 8px; top: -64px; padding: 4px 8px; background: var(--c8); color: var(--c1); }
+.skip:focus { top: 8px; z-index: 10; }
+
+/* the bitmap voice: fixed sizes, never fractional */
+.bitmap, .menu a, .win .bar, .caption, .status, .hud, .rows .when, .systems b, .rows .lang {
+  font-family: var(--bitmap);
+  font-size: 16px;
+  line-height: var(--row);
+  letter-spacing: 0;
+  -webkit-font-smoothing: none;
+}
+
+/* ---------- the screen ---------- */
+.screen { max-width: 1280px; margin: 0 auto; padding: 0 16px 32px; }
+
+/* HUD strip: hairline, readouts, nothing decorative */
+.hud {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--c11);
+  color: var(--c9);
+  text-transform: uppercase;
+}
+.hud .brand { color: var(--c8); }
+.hud .live { color: var(--c14); }
+.hud .live::before {
+  content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 8px;
+  background: var(--c14); vertical-align: 1px;
+}
+
+/* ---------- hero band: two framed regions ---------- */
+.upper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: stretch;
+  padding: 24px 0;
+}
+
+/* a modern hairline frame with pixel corner brackets */
+.frame {
+  position: relative;
+  border: 1px solid var(--c11);
+  background: var(--c1);
+}
+.frame::before, .frame::after {
+  content: ""; position: absolute; width: 12px; height: 12px; pointer-events: none;
+}
+.frame::before { left: -1px; top: -1px; border-left: 2px solid var(--c9); border-top: 2px solid var(--c9); }
+.frame::after { right: -1px; bottom: -1px; border-right: 2px solid var(--c9); border-bottom: 2px solid var(--c9); }
+
+.ident {
+  display: flex; flex-direction: column; gap: 24px;
+  padding: 24px;
+}
+.ident nav { margin-top: auto; }
+.ident h1 {
+  font-family: var(--bitmap);
+  font-size: 32px; line-height: 32px;
+  margin-bottom: 12px;
+  -webkit-font-smoothing: none;
+  text-shadow: 2px 0 0 currentColor; /* bitmap bold: overprint one pixel right */
+}
+.ident .role { font-size: 19px; font-weight: 500; margin: 0 0 12px; }
+.ident .role b { font-weight: 600; color: var(--c7); }
+.ident .bio { color: var(--c9); margin: 0; max-width: 52ch; }
+
+/* command menu: bordered rows; the active one inverts its cells and gets the pointer */
+.menu { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; max-width: 360px; }
+.menu a {
+  display: grid; grid-template-columns: 16px 1fr auto; align-items: center; gap: 8px;
+  padding: 2px 10px;
+  border: 1px solid var(--c10);
+  color: var(--c8);
+  text-transform: uppercase;
+}
+.menu a::before {
+  content: ""; width: 8px; height: 12px;
+  background: var(--c7);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  opacity: 0;
+}
+.menu a small { font-size: 16px; color: var(--c9); }
+.menu a:hover, .menu a:focus-visible, .menu a[aria-current="true"] {
+  background: var(--c8); color: var(--c1); border-color: var(--c8); box-shadow: none;
+}
+.menu a:hover::before, .menu a:focus-visible::before, .menu a[aria-current="true"]::before { opacity: 1; background: var(--c6); }
+.menu a:hover small, .menu a:focus-visible small, .menu a[aria-current="true"] small { color: var(--c11); }
+
+/* ---------- the artifact: a beveled screen, integer scale only ---------- */
+.art {
+  position: relative;
+  width: 320px; height: 200px; max-width: 100%;
+  margin: 0 auto;
+  border: 4px solid;
+  border-color: var(--c11) var(--c9) var(--c9) var(--c11);
+  background: var(--c0);
+  overflow: hidden;
+  box-sizing: content-box;
+}
+.art img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  image-rendering: pixelated; display: block;
+}
+.art .stars-b { opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .art .stars-a { animation: twinkle-a 2.4s steps(1, end) infinite; }
+  .art .stars-b { animation: twinkle-b 2.4s steps(1, end) infinite; }
+}
+@keyframes twinkle-a { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0; } }
+@keyframes twinkle-b { 0%, 55% { opacity: 0; } 56%, 100% { opacity: 1; } }
+.art .caption {
+  position: absolute; right: 0; bottom: 0;
+  padding: 0 8px; background: var(--c1); color: var(--c9);
+  white-space: nowrap;
+}
+.art .caption .spec, .hud .coords { display: none; }
+
+/* ---------- the log window ---------- */
+.win { padding: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .win { --rows: 24; animation: open-window 640ms steps(var(--rows), end) both; }
+}
+@keyframes open-window {
+  from { clip-path: inset(0 0 100% 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+.win .bar {
+  display: flex; justify-content: space-between; gap: 16px;
+  padding: 0 12px;
+  background: var(--c8); color: var(--c1);
+  text-transform: uppercase;
+}
+.win .bar .live { color: var(--c11); }
+.win .bar .live::before {
+  content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 8px;
+  background: var(--c14); vertical-align: 1px;
+}
+.dither-25 {
+  height: 8px;
+  background: repeating-conic-gradient(var(--c3) 0 25%, var(--c2) 0 50%) 0 0 / 4px 4px;
+}
+.dither-50 {
+  height: 4px;
+  margin: 32px 0;
+  background: repeating-conic-gradient(var(--c10) 0 25%, transparent 0 50%) 0 0 / 4px 4px;
+}
+.win .body { padding: 32px 24px 24px; }
+
+section h2 {
+  font-family: var(--bitmap);
+  font-size: 32px; line-height: 32px;
+  margin-bottom: 24px;
+  color: var(--c7);
+  -webkit-font-smoothing: none;
+  text-shadow: 2px 0 0 currentColor;
+}
+
+/* ---------- lists ---------- */
+.rows { list-style: none; margin: 0; padding: 0; }
+.rows li {
+  display: grid; grid-template-columns: 1fr; gap: 4px 24px;
+  padding: 16px 0;
+  border-top: 1px solid var(--c11);
+}
+.rows li:first-child { border-top: 0; padding-top: 0; }
+.rows .name { font-size: 19px; font-weight: 600; line-height: 28px; }
+.rows .name a { display: inline-block; margin-right: 8px; }
+.rows .meta { font-weight: 400; color: var(--c9); }
+.rows .what { color: var(--c9); margin: 0; }
+.rows .when { color: var(--c7); white-space: nowrap; padding-top: 2px; }
+.rows .lang {
+  display: inline-block; padding: 0 6px; margin: 0 8px 0 0;
+  border: 1px solid var(--c10); color: var(--c9);
+  line-height: 22px; font-size: 16px;
+}
+.projects .name { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 0; }
+
+.systems {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(176px, 1fr)); gap: 8px;
+}
+.systems li { border: 1px solid var(--c11); padding: 4px 12px; line-height: 28px; font-weight: 500; }
+.systems li b { font-weight: 400; color: var(--c7); margin-right: 10px; }
+
+.comms .name { font-weight: 500; }
+
+/* ---------- status line ---------- */
+.status {
+  margin-top: 24px; padding: 12px 0 0;
+  border-top: 1px solid var(--c11);
+  color: var(--c9);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 24px;
+}
+
+/* ---------- wider ---------- */
+@media (min-width: 700px) {
+  .art { width: 640px; height: 400px; }
+  .art .caption .spec, .hud .coords { display: inline; }
+  .ident { padding: 32px; }
+  .ident h1 { font-size: 48px; line-height: 48px; text-shadow: 3px 0 0 currentColor; }
+  .win .body { padding: 40px 32px 32px; }
+  .rows li { grid-template-columns: 144px 1fr; }
+  .rows li .what { grid-column: 2; }
+  .projects li { grid-template-columns: 224px 1fr; }
+  .projects .name { flex-direction: column; align-items: flex-start; }
+}
+@media (min-width: 1040px) {
+  .screen { padding: 0 24px 48px; }
+  .upper { grid-template-columns: 1fr 648px; gap: 32px; padding: 32px 0; }
+  .art { margin: 0; }
+  .ident { padding: 40px; }
+  .ident h1 { font-size: 64px; line-height: 64px; margin-bottom: 20px; text-shadow: 4px 0 0 currentColor; }
+  .win .body { padding: 48px 40px 40px; }
+  .rows li { grid-template-columns: 176px 1fr; }
+  .projects li { grid-template-columns: 288px 1fr; }
+}
